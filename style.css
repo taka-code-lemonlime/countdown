@@ -2,6 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* 👇 iPhoneの勝手な文字サイズ調整を無効化する */
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -17,13 +19,13 @@ body {
 
 .container {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     width: 100%;
     max-width: 420px;
 }
 
 header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .subtitle {
@@ -36,36 +38,36 @@ header {
 }
 
 h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     opacity: 0.9;
 }
 
-/* カウントダウンボックス：2つの要素を縦に並べる */
 .countdown-box {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 2.5rem 1rem;
-    margin-bottom: 2.5rem;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .display-item {
     display: flex;
     justify-content: center;
     align-items: baseline;
+    /* 👇 折り返しを防ぎ、サイズを維持する */
+    white-space: nowrap; 
 }
 
-/* 総日数（602）のスタイル */
 .main-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem; /* iPhone向けに少し調整 */
     font-weight: 700;
     line-height: 1;
     background: linear-gradient(135deg, #ffffff, #00f2fe);
@@ -74,25 +76,22 @@ h1 {
     text-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
 }
 
-/* 詳細内訳（1年7か月...）のスタイル */
 .main-number-sub {
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem; /* 文字数が多いため少し抑えめに。視覚的なボリュームは揃います */
+    font-size: 2rem; /* iPhoneでも1行に収まりやすいサイズ */
     font-weight: 700;
     line-height: 1.2;
-    color: #ffffff;
     background: linear-gradient(135deg, #ffffff, #00f2fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .main-unit {
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    margin-left: 0.4rem;
     opacity: 0.8;
 }
 
-/* 中央の区切り線 */
 .divider {
     height: 1px;
     background: rgba(255, 255, 255, 0.1);
@@ -101,30 +100,34 @@ h1 {
 }
 
 footer {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .current-date {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 0.4rem;
-    color: #00f2fe; /* 今日を強調 */
+    color: #00f2fe;
     font-weight: 500;
 }
 
 .target-date {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.6rem;
     opacity: 0.7;
 }
 
 .message {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 300;
     letter-spacing: 0.1em;
 }
 
-/* 小さいスマホ画面用の調整 */
-@media (max-width: 375px) {
-    .main-number { font-size: 3.2rem; }
-    .main-number-sub { font-size: 1.8rem; }
+/* 👇 iPhoneで文字が小さくなるのを防ぐためのメディアクエリ */
+@media screen and (max-width: 480px) {
+    .main-number {
+        font-size: 3rem !important; /* 強制的に大きくする */
+    }
+    .main-number-sub {
+        font-size: 1.6rem !important; /* 強制的に大きくする */
+    }
 }
