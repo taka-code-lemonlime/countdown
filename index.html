@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>共通テストカウントダウン 2028</title>
+    <!-- CSSファイルを読み込む -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fontsからおしゃれなフォント（Noto Sans JPとMontserrat）を読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- アプリ全体のコンテナ（中央配置用） -->
+    <div class="container">
+        <header>
+            <p class="subtitle">ROAD TO 2028</p>
+            <h1>共通テストまで</h1>
+        </header>
+
+<!-- 日数を表示するメインエリア -->
+        <main class="countdown-box">
+            <div class="main-days">
+                <!-- ⚠️ id が「days-left」になっているか -->
+                <span id="days-left" class="days-number">---</span>
+                <span class="days-unit">日</span>
+            </div>
+            <!-- ⚠️ id が「detailed-left」になっているか -->
+            <p id="detailed-left" class="detailed-text">--年--か月--日</p>
+        </main>
+
+        <footer>
+            <!-- 目標日を表示 -->
+            <p class="target-date">試験初日: 2028年1月15日(土)</p>
+            <p class="message">一歩ずつ、確実に。</p>
+        </footer>
+    </div>
+
+    <!-- JavaScriptファイルを読み込む（HTMLが読み込まれた後に実行） -->
+    <script src="script.js"></script>
+</body>
+</html>

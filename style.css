@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    font-family: 'Noto Sans JP', 'Montserrat', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: #00f2fe;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.days-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.days-unit {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.detailed-text {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #00f2fe;
+    font-weight: 500;
+}
+
+footer {
+    opacity: 0.7;
+}
+
+.target-date {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.message {
+    font-size: 0.9rem;
+}
