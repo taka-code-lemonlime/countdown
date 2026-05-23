@@ -19,7 +19,7 @@ body {
     text-align: center;
     padding: 2rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
 }
 
 header {
@@ -36,61 +36,78 @@ header {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.1em;
     opacity: 0.9;
 }
 
+/* カウントダウンボックス：2つの要素を縦に並べる */
 .countdown-box {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1rem;
     margin-bottom: 2.5rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
-.main-days {
-    margin-bottom: 1rem;
+.display-item {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
 }
 
-.days-number {
+/* 総日数（602）のスタイル */
+.main-number {
     font-family: 'Montserrat', sans-serif;
-    font-size: 5.5rem;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1;
     background: linear-gradient(135deg, #ffffff, #00f2fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
-    text-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+    text-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
 }
 
-.days-unit {
+/* 詳細内訳（1年7か月...）のスタイル */
+.main-number-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem; /* 文字数が多いため少し抑えめに。視覚的なボリュームは揃います */
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffffff, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-unit {
     font-size: 1.5rem;
     margin-left: 0.5rem;
     opacity: 0.8;
 }
 
-.detailed-text {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: #00f2fe;
-    font-weight: 500;
+/* 中央の区切り線 */
+.divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50%;
+    margin: 0 auto;
 }
 
 footer {
     opacity: 0.8;
 }
 
-/* 今日の日付のスタイル */
 .current-date {
     font-size: 1rem;
     margin-bottom: 0.4rem;
-    color: #ffffff;
-    letter-spacing: 0.05em;
+    color: #00f2fe; /* 今日を強調 */
     font-weight: 500;
 }
 
@@ -106,7 +123,8 @@ footer {
     letter-spacing: 0.1em;
 }
 
+/* 小さいスマホ画面用の調整 */
 @media (max-width: 375px) {
-    .days-number { font-size: 4.5rem; }
-    .detailed-text { font-size: 1.1rem; }
+    .main-number { font-size: 3.2rem; }
+    .main-number-sub { font-size: 1.8rem; }
 }

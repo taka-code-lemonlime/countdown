@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateCountdown() {
         const now = new Date();
 
-        // 今日の日付と曜日を表示
+        // 1. 今日のお日付を表示
         const y = now.getFullYear();
         const m = now.getMonth() + 1;
         const d = now.getDate();
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 総日数の計算
+        // 2. 総日数の計算
         const oneDayMs = 24 * 60 * 60 * 1000;
         const daysLeft = Math.ceil(difference / oneDayMs);
         daysDisplay.textContent = daysLeft;
 
-        // 年月日の分解計算
+        // 3. 年月日の詳細計算
         let currentYear = now.getFullYear();
         let currentMonth = now.getMonth();
         let currentDate = now.getDate();
@@ -39,11 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let months = targetDate.getMonth() - currentMonth;
         let days = targetDate.getDate() - currentDate;
 
+        // 日数がマイナスになったら前月から補填
         if (days < 0) {
             const daysInPreviousMonth = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0).getDate();
             days += daysInPreviousMonth;
             months--;
         }
+        // 月数がマイナスになったら前年から補填
         if (months < 0) {
             months += 12;
             years--;
@@ -53,6 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCountdown();
-    // 1分ごとに更新（日付が変わった時にすぐ反映されるように）
+    // 1分ごとに更新
     setInterval(updateCountdown, 60000);
 });
