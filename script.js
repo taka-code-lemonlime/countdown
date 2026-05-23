@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     const daysDisplay = document.getElementById('days-left');
     const detailedDisplay = document.getElementById('detailed-left');
+    const todayDisplay = document.getElementById('today-date');
 
     const targetDate = new Date(2028, 0, 15, 0, 0, 0);
+    const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"];
 
     function updateCountdown() {
         const now = new Date();
+
+        // 今日の日付と曜日を表示
+        const y = now.getFullYear();
+        const m = now.getMonth() + 1;
+        const d = now.getDate();
+        const w = dayOfWeekStr[now.getDay()];
+        todayDisplay.textContent = `今日は：${y}年${m}月${d}日(${w})`;
+
         const difference = targetDate - now;
 
         if (difference <= 0) {
@@ -42,5 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 3600000);
+    // 1分ごとに更新（日付が変わった時にすぐ反映されるように）
+    setInterval(updateCountdown, 60000);
 });
